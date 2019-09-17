@@ -15,9 +15,11 @@
     };
   }
   
-  let user_msg = http_event.parsed_body.event.text;
-  console.log(user_msg);
-return { status_code: 200 };
+  let body_text = http_event.parsed_body.event.text;
+  let lex_result = api.run("this.post_text", {slackText : body_text});
+  console.log(lex_result);
+
+  return { status_code: 200 };
 }  
 //   const parsed_body = http_event.parsed_body;
 //   const workspaceId = parsed_body.team_id;
