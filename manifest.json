@@ -51,7 +51,7 @@
       }, {
         "id": "post_text",
         "tql": {
-          "tql": "SELECT * FROM aws_lex_runtime.post_text\n  WHERE botName='WhereToEat'\n  AND botAlias='LATEST'\n  AND userId='taylor1'\n  AND $body=(SELECT {\n    'inputText' : 'I want food',\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM aws_lex_runtime.post_text\n  WHERE botName='WhereToEat'\n  AND botAlias='LATEST'\n  AND userId='taylor1'\n  AND $body=(SELECT {\n    'inputText' : @slackText,\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }],
       "dataConnections": [{
