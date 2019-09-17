@@ -26,12 +26,12 @@
 //       });      
 //     }
 //   });
-//   return { status_code: 200 };
-  if (http_event.parsed_body.challenge) {
-    return {
-      status_code: 200,
-      headers: { "Content-Type": "text/plain" },
-      body: body.challenge
-    };
-  }
+    if (http_event.parsed_body.challenge) {
+      return {
+        status_code: 200,
+        headers: { "Content-Type": "text/plain" },
+        body: body.challenge
+      };
+    }
+	return { status_code: 200 };  
 }
