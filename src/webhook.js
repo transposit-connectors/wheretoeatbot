@@ -17,7 +17,7 @@
   
   let body_text = http_event.parsed_body.event.text;
   console.log(body_text);
-  //let lex_result = api.run("this.post_text", {slackText : body_text});
+  let lex_result = api.run("this.post_text", {slackText : body_text});
   //console.log(lex_result);
 
   return { status_code: 200 };
