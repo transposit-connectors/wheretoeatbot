@@ -93,6 +93,7 @@
         "ref": "aws_lex_runtime",
         "overrides": {
           "aws": {
+            "region": "us-west-2",
             "executionLimits": {
             }
           }
