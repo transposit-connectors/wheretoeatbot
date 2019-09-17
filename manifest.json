@@ -72,6 +72,15 @@
         }
       }, {
         "ref": "slack.raw"
+      }, {
+        "ref": "aws_lex_models",
+        "overrides": {
+          "aws": {
+            "region": "aws-west-2",
+            "executionLimits": {
+            }
+          }
+        }
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
