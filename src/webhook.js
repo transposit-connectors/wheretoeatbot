@@ -5,7 +5,7 @@
  * For sample code and reference material, visit
  * https://www.transposit.com/docs/building/webhooks
  */
-// ({ http_event }) => {
+({ http_event }) => {
 //   const parsed_body = http_event.parsed_body;
 //   const workspaceId = parsed_body.team_id;
 //   const userId = parsed_body.user_id;
@@ -27,12 +27,11 @@
 //     }
 //   });
 //   return { status_code: 200 };
-// }
-
-if (http_event.parsed_body.challenge) {
-  return {
-    status_code: 200,
-    headers: { "Content-Type": "text/plain" },
-    body: body.challenge
-  };
+  if (http_event.parsed_body.challenge) {
+    return {
+      status_code: 200,
+      headers: { "Content-Type": "text/plain" },
+      body: body.challenge
+    };
+  }
 }
