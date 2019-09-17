@@ -15,7 +15,7 @@
     };
   }
   
-  let user_msg = http_event.parsed_body.text;
+  let user_msg = http_event.parsed_body;
   console.log(user_msg);
 return { status_code: 200 };
 }  
