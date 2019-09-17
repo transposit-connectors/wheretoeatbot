@@ -7,7 +7,8 @@
  */
 ({ http_event }) => {
   if (http_event.parsed_body.challenge) {
-	let body = http_event.parsed_body    
+	let body = http_event.parsed_body;
+    console.log(body);
     return {
       status_code: 200,
       headers: { "Content-Type": "text/plain" },
