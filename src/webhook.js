@@ -26,7 +26,7 @@
 //       });      
 //     }
 //   });
-    if (http_event.parsed_body.challenge) {
+    if (let body = http_event.parsed_body) {
       return {
         status_code: 200,
         headers: { "Content-Type": "text/plain" },
