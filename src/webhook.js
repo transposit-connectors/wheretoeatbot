@@ -8,13 +8,15 @@
 ({ http_event }) => {
   if (http_event.parsed_body.challenge) {
 	let body = http_event.parsed_body;
-    console.log(body);
     return {
       status_code: 200,
       headers: { "Content-Type": "text/plain" },
       body: body.challenge
     };
   }
+  
+  let user_msg = http_event.parsed_body.text;
+  console.log(user_msg);
 return { status_code: 200 };
 }  
 //   const parsed_body = http_event.parsed_body;
