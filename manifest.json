@@ -57,6 +57,11 @@
           }],
           "tql": "SELECT * FROM aws_lex_runtime.post_text\n  WHERE botName='WhereToEat'\n  AND botAlias='LATEST'\n  AND userId=\"taylor1\"\n  AND $body=(SELECT {\n    'inputText' : @slackText,\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
+      }, {
+        "id": "post_chat_message",
+        "tql": {
+          "tql": "SELECT * FROM slack.post_chat_message\n  WHERE $body=(SELECT {\n    'channel' : 'DNFAYH6J0',\n    'text' : 'Hello world'\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
