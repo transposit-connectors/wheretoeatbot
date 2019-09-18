@@ -26,7 +26,7 @@
     let lex_result = api.run("this.post_text", {slackText : body_text});
 
     console.log(lex_result[0].message);
-    //let lex_slack = api.run("this.post_chat_message", {lexReponse : lex_result[0].message, channelId : channelId});
+    let lex_slack = api.run("this.post_chat_message", {lexReponse : lex_result[0].message, channelId : channelId});
   } 
   
 //   setImmediate(() => {
