@@ -24,15 +24,15 @@
     	let lex_slack_response = api.run("this.post_chat_message", {lexResponse : lex_slack, channelId : channelId});      
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
-      	console.log("We are now ready for fulfillment....");
       	let maxPrice = lex_result[0]["slots"]["Price"];
-      	console.log(maxPrice);
+      	let location = lex_result[0]["slots"]["Location"];
+      	// avg walk speed is 1.4 m/s, so max time in min * 1.4 * 60 to get maxDistance in meters
+      	let maxDistance = lex_result[0]["slots"]["Distance"] * 1.4 * 60;
       
         //console.log(lex_result);
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
-      	console.log("ready to use google API!");
       
-        //let google_results = api.run("this.search_nearby", {});
+        let google_results = api.run("this.search_nearby", {});
     }
   } 
   return { status_code: 200 };
