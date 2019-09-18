@@ -25,7 +25,7 @@
     
     // for some reason, when called this returns with an error: 
     // Expected STRING for parameter "text" but received null
-    let lex_slack_response = api.run("this.post_chat_message", {lexReponse : lex_slack, channelId : channelId});
+    let lex_slack_response = api.run("this.post_chat_message", {lexResponse : lex_slack, channelId : channelId});
   } 
   return { status_code: 200 };
 }  
