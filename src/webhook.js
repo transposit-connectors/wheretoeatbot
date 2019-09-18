@@ -25,7 +25,7 @@
   
   console.log(lex_result[0].message);
   
-  let lex_to_slack = api.run("this.post_chat_message", { lexResponse = lex_result[0].message });
+  let lex_to_slack = api.run("this.post_chat_message", { lexResponse : lex_result[0].message });
 //   setImmediate(() => {
 //     let user = api.user({type: "slack", workspaceId, userId});
 //     if (user) {
