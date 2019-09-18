@@ -39,7 +39,7 @@
       	console.log(latLong);
                        
       
-        let google_place_results = api.run("this.search_nearby", {maxDistance : maxDistance});
+        let google_place_results = api.run("this.search_nearby", {maxDistance : maxDistance, location : latLong});
     }
   } 
   return { status_code: 200 };
