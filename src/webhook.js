@@ -18,9 +18,7 @@
   if (!parsed_body.event.bot_id)  {
     let body_text = parsed_body.event.text;    
     let lex_result = api.run("this.post_text", {slackText : body_text, userId : "taylor1"});
-    
-    console.log(lex_result[0].dialogState);
-    
+        
     if (lex_result[0].dialogState != "ReadyForFulfillment") {
     	console.log(lex_result);
     	let lex_slack = lex_result[0].message;
