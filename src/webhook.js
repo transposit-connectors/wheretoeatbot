@@ -29,16 +29,16 @@
       	// avg walk speed is 1.4 m/s, so max time in min * 1.4 * 60 to get maxDistance in meters
       	let maxDistance = lex_result[0]["slots"]["Distance"] * 1.4 * 60;
       
-        //console.log(lex_result);
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
       	
       	let google_geocode_results = api.run("this.geocode", {address : userAddress});      
       	let latLong = [google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"], 
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
       	latLong = latLong.join();
-      	console.log(typeof latLong);
-                       
-      
+      	
+      	console.log("maxDistance " + maxDistance);
+      	console.log("location " + latLong);
+      	
         let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong});
       
       	console.log(google_place_results);
