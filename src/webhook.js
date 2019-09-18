@@ -15,7 +15,7 @@
   }
   
   //check if not a bot
-  if (!parsed_body.event.bot_id)  {
+  if (!parsed_body.event.bot_id && !http_event.headers['X-Slack-Retry-Num'])  {
     let body_text = parsed_body.event.text;    
     let lex_result = api.run("this.post_text", {slackText : body_text, userId : "taylor1"});
         
@@ -26,8 +26,9 @@
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
-      	let google_results = api.run("this.search_nearby", {});
-      	console.log(google_results);
+      	console.log("ready to use google API!");
+      
+        //let google_results = api.run("this.search_nearby", {});
     }
   } 
   return { status_code: 200 };
