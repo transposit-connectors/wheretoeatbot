@@ -6,8 +6,13 @@
  * https://www.transposit.com/docs/building/webhooks
  */
 ({ http_event }) => {
-  if (http_event.parsed_body.challenge) {
-	let body = http_event.parsed_body;
+  const parsed_body = http_event.parsed_body;
+  const workspaceId = parsed_body.team_id;
+  const userId = parsed_body.user_id;
+  const response_url = parsed_body.response_url;  
+  
+  if (parsed_body.challenge) {
+	let body = parsed_body;
     return {
       status_code: 200,
       headers: { "Content-Type": "text/plain" },
@@ -15,18 +20,10 @@
     };
   }
   
-  let body_text = http_event.parsed_body.event.text;
-  let user_id = http_event.parsed_body.event.user;
+  let body_text = parsed_body.event.text;
   let lex_result = api.run("this.post_text", {slackText : body_text});
   
   console.log(lex_result[0].message);
-
-  return { status_code: 200 };
-}  
-//   const parsed_body = http_event.parsed_body;
-//   const workspaceId = parsed_body.team_id;
-//   const userId = parsed_body.user_id;
-//   const response_url = parsed_body.response_url;
 
 //   setImmediate(() => {
 //     let user = api.user({type: "slack", workspaceId, userId});
@@ -43,3 +40,5 @@
 //       });      
 //     }
 //   });
+    return { status_code: 200 };
+}  
