@@ -25,7 +25,10 @@
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
       	console.log("We are now ready for fulfillment....");
-        console.log(lex_result);
+      	let maxPrice = lex_result[0]["Slot"]["Price"];
+      	console.log(maxPrice);
+      
+        //console.log(lex_result);
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
       	console.log("ready to use google API!");
       
