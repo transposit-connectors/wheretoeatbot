@@ -25,7 +25,7 @@
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
       	console.log("We are now ready for fulfillment....");
-      	let maxPrice = lex_result[0]["Slot"]["Price"];
+      	let maxPrice = lex_result[0]["slots"]["Price"];
       	console.log(maxPrice);
       
         //console.log(lex_result);
