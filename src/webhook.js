@@ -24,6 +24,14 @@
   let lex_result = api.run("this.post_text", {slackText : body_text});
   
   console.log(lex_result[0].message);
+  
+  let message = api.run('this.get_slack_message', {}, {asUser: user.id})[0];
+  	api.run("slack_webhook.post_to_response_url", {
+      response_url: response_url,
+      post_body: message
+  });
+  
+  console.log(message);
 
 //   setImmediate(() => {
 //     let user = api.user({type: "slack", workspaceId, userId});
