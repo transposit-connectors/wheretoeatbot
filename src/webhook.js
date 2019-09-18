@@ -31,7 +31,7 @@
       
         //console.log(lex_result);
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
-      
+      	console.log(address);
       	let google_geocode_results = api.run("this.geocode", {address : address});
       	console.log(google_geocode_results);
       	//console.log(google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"];
