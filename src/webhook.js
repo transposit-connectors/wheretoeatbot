@@ -17,7 +17,7 @@
   
   let body_text = http_event.parsed_body.event.text;
   let user_id = http_event.parsed_body.event.user;
-  let lex_result = api.run("this.post_text", {slackText : body_text, userId : user_id});
+  let lex_result = api.run("this.post_text", {slackText : body_text, userId : "taylor"});
   
   console.log(lex_result.message);
 
