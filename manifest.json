@@ -65,6 +65,10 @@
       }, {
         "id": "geocode",
         "tql": {
+          "parameters": [{
+            "name": "address",
+            "type": "STRING"
+          }],
           "tql": "SELECT * FROM google_maps.geocode\n  WHERE address=@address\n  AND outputFormat='json'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }],
