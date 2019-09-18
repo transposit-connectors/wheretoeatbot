@@ -63,8 +63,11 @@
           "parameters": [{
             "name": "lexResponse",
             "type": "STRING"
+          }, {
+            "name": "channelId",
+            "type": "STRING"
           }],
-          "tql": "SELECT * FROM slack.post_chat_message\n  WHERE $body=(SELECT {\n    'channel' : 'DNFAYH6J0',\n    'text' : @lexResponse,\n    'as_user' : true\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM slack.post_chat_message\n  WHERE $body=(SELECT {\n    'channel' : @channelId,\n    'text' : @lexResponse,\n    'as_user' : true\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }],
       "dataConnections": [{
