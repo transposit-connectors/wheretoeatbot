@@ -40,7 +40,7 @@
             "name": "slackText",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM aws_lex_runtime.post_text\n  WHERE botName='WhereToEat'\n  AND botAlias='TEST'\n  AND userId=\"testuser\"\n  AND $body=(SELECT {\n    'inputText' : @slackText,\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM aws_lex_runtime.post_text\n  WHERE botName='WhereToEat'\n  AND botAlias='TEST'\n  AND userId='taylor1'\n  AND $body=(SELECT {\n    'inputText' : @slackText,\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }, {
         "id": "post_chat_message",
