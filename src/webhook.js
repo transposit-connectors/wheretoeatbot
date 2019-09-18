@@ -21,8 +21,8 @@
     let lex_result = api.run("this.post_text", {slackText : body_text});
     let lex_slack = lex_result[0].message;
     
-   // console.log(lex_slack);
-    let lex_slack_response = api.run("this.post_chat_message", {lexReponse : lex_slack, channelId : channelId});
+    console.log(lex_slack);
+    // let lex_slack_response = api.run("this.post_chat_message", {lexReponse : lex_slack, channelId : channelId});
   } 
   return { status_code: 200 };
 }  
