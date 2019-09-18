@@ -32,12 +32,9 @@
         //console.log(lex_result);
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
       	
-      	console.log(userAddress);
-      	let google_geocode_results = api.run("this.geocode", {address : userAddress});
-      	console.log(google_geocode_results);
-      
-      	//console.log(google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"];
-      	//console.log(google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"];
+      	let google_geocode_results = api.run("this.geocode", {address : userAddress});      
+      	console.log(google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"];
+      	console.log(google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"];
       
         //let google_place_results = api.run("this.search_nearby", {maxDistance : maxDistance});
     }
