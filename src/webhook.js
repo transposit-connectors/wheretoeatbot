@@ -14,7 +14,6 @@
     };
   }
   
-  //if (!parsed_body.event.bot_id && !http_event.headers['X-Slack-Retry-Num'])  {
   //check if not a bot
   if (!parsed_body.event.bot_id)  {
     let body_text = parsed_body.event.text;    
@@ -23,6 +22,9 @@
     
     // When logged, this console.log returns the proper message from Lex API
     //console.log(lex_slack);
+    
+    // for some reason, when called this returns with an error: 
+    // Expected STRING for parameter "text" but received null
     let lex_slack_response = api.run("this.post_chat_message", {lexReponse : lex_slack, channelId : channelId});
   } 
   return { status_code: 200 };
