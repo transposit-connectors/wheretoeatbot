@@ -17,7 +17,7 @@
   //check if not a bot
   if (!parsed_body.event.bot_id)  {
     let body_text = parsed_body.event.text;    
-    let lex_result = api.run("this.post_text", {slackText : body_text, userId : userId});
+    let lex_result = api.run("this.post_text", {slackText : body_text, userId : "taylor1"});
     
     console.log(lex_result[0].dialogState);
     
