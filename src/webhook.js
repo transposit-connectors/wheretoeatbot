@@ -1,10 +1,3 @@
-/**
- * This operation is an example of a JavaScript operation deployed as a Webhook
- * and configured to work with Slack.
- *
- * For sample code and reference material, visit
- * https://www.transposit.com/docs/building/webhooks
- */
 ({ http_event }) => {
   const parsed_body = http_event.parsed_body;
   const workspaceId = parsed_body.team_id;
@@ -28,21 +21,5 @@
     console.log(lex_result[0].message);
     let lex_slack = api.run("this.post_chat_message", {lexReponse : lex_result[0].message, channelId : channelId});
   } 
-  
-//   setImmediate(() => {
-//     let user = api.user({type: "slack", workspaceId, userId});
-//     if (user) {
-//       let message = api.run('this.get_slack_message', {}, {asUser: user.id})[0];
-//       api.run("slack_webhook.post_to_response_url", {
-//         response_url: response_url,
-//         post_body: message
-//       });      
-//     } else {
-//       api.run("slack_webhook.post_to_response_url", {
-//         response_url: response_url,
-//         post_body: {text: 'Please configure your user at ' + env.getBuiltin().appUrl}
-//       });      
-//     }
-//   });
-    return { status_code: 200 };
+  return { status_code: 200 };
 }  
