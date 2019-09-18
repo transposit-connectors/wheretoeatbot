@@ -24,9 +24,9 @@
     	let lex_slack = lex_result[0].message;
     	let lex_slack_response = api.run("this.post_chat_message", {lexResponse : lex_slack, channelId : channelId});      
     }
-    // else if (dialogState in lex_result[0] && lex_result[0].dialogState == "ReadyForFulfillment"){
-    // 	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
-    // }
+    else if (dialogState in lex_result[0] && lex_result[0].dialogState == "ReadyForFulfillment"){
+    	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
+    }
   } 
   return { status_code: 200 };
 }  
