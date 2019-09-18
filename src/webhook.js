@@ -36,10 +36,10 @@
       	let latLong = [google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"], 
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
       	latLong = latLong.join();
-      	console.log(latLong);
+      	console.log(typeof latLong);
                        
       
-        let google_place_results = api.run("this.search_nearby", {maxDistance : maxDistance, location : latLong});
+        let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong});
       
       	console.log(google_place_results);
     }
