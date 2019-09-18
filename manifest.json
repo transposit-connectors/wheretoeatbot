@@ -57,6 +57,16 @@
           }],
           "tql": "SELECT * FROM slack.post_chat_message\n  WHERE $body=(SELECT {\n    'channel' : @channelId,\n    'text' : @lexResponse,\n    'as_user' : true\n  })\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
+      }, {
+        "id": "search_nearby",
+        "tql": {
+          "tql": "SELECT * FROM google_maps.search_nearby\n  WHERE type='restaurant'\n  AND rankby='prominence'\n  AND maxprice=1\n  AND opennow=true\n  AND location='30.2529976,-97.77182889999999'\n  AND radius=1260\n  -- The following parameters have been populated with suggested values\n  AND outputFormat='json'\n  LIMIT 10\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+        }
+      }, {
+        "id": "geocode",
+        "tql": {
+          "tql": "SELECT * FROM google_maps.geocode\n  WHERE address=@address\n  AND outputFormat='json'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+        }
       }],
       "dataConnections": [{
         "ref": "slack_identify.raw",
