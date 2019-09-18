@@ -15,6 +15,9 @@
       }, {
         "name": "transposit/aws_lex_runtime:latest",
         "alias": "aws_lex_runtime"
+      }, {
+        "name": "transposit/google_maps:v1.*.*",
+        "alias": "google_maps"
       }],
       "operations": [{
         "id": "webhook",
