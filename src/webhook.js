@@ -21,7 +21,7 @@
     };
   }
   
-  if (!parsed_body.event.subtype == "bot_message")  {
+  if (!parsed_body.event.bot_id)  {
     let body_text = parsed_body.event.text;
     let lex_result = api.run("this.post_text", {slackText : body_text});
 
