@@ -21,7 +21,7 @@
 
     let lexResponse = lex_result[0].message;
     console.log(lexResponse);
-    //let lex_slack = api.run("this.post_chat_message", {lexReponse : lexResponse, channelId : channelId});
+    let lex_slack = api.run("this.post_chat_message", {lexReponse : "What should I eat?", channelId : channelId});
   } 
   return { status_code: 200 };
 }  
