@@ -19,10 +19,12 @@
   if (!parsed_body.event.bot_id)  {
     let body_text = parsed_body.event.text;    
     let lex_result = api.run("this.post_text", {slackText : body_text});
-    let lex_slack = lex_result[0].message;
+    //let lex_slack = lex_result[0].message;
     
-    console.log(lex_slack);
-    // let lex_slack_response = api.run("this.post_chat_message", {lexReponse : lex_slack, channelId : channelId});
+    let lex_slack = "hello";
+    // When logged, this console.log returns the proper message from Lex API
+    //console.log(lex_slack);
+    let lex_slack_response = api.run("this.post_chat_message", {lexReponse : lex_slack, channelId : channelId});
   } 
   return { status_code: 200 };
 }  
