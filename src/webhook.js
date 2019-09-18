@@ -19,7 +19,7 @@
   let user_id = http_event.parsed_body.event.user;
   let lex_result = api.run("this.post_text", {slackText : body_text});
   
-  console.log(lex_result.message);
+  console.log(lex_result[0].message);
 
   return { status_code: 200 };
 }  
