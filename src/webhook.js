@@ -20,11 +20,12 @@
     let lex_result = api.run("this.post_text", {slackText : body_text, userId : "taylor1"});
         
     if (lex_result[0].dialogState != "ReadyForFulfillment") {
-    	console.log(lex_result);
     	let lex_slack = lex_result[0].message;
     	let lex_slack_response = api.run("this.post_chat_message", {lexResponse : lex_slack, channelId : channelId});      
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
+      	console.log("We are now ready for fulfillment....");
+        console.log(lex_result);
     	let slack_recommendations = api.run("this.post_chat_message", {lexResponse : "I have some suggestions...", channelId : channelId});
       	console.log("ready to use google API!");
       
