@@ -15,14 +15,14 @@
   }
   
   //check if not a bot
-  if (!parsed_body.event.bot_id)  {
+  if (!parsed_body.event.bot_id && !http_event.headers['X-Slack-Retry-Num'])  {
     console.log(parsed_body.event.text);
     let body_text = parsed_body.event.text;
     
     let lex_result = api.run("this.post_text", {slackText : body_text});
 
     let lexResponse = lex_result[0].message;
-    //console.log(lexResponse);
+    console.log(lexResponse);
     let lex_slack = api.run("this.post_chat_message", {lexReponse : "What should I eat?", channelId : channelId});
   } 
   return { status_code: 200 };
