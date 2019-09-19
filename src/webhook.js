@@ -39,7 +39,7 @@
       	console.log(google_place_results);
       
       	if (google_place_results[0]) {
-          let google_message = "I have some suggestions... \n" + google_place_results[0]["name"] + " " + google_place_results[0]["vicinity"] + " /nhttps://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
+          let google_message = "I have a suggestion... \n" + google_place_results[0]["name"] + " /n" + "https://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
           let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});          
         } else {
           let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
