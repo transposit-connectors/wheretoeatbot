@@ -1,7 +1,7 @@
 ({ http_event }) => {
   const parsed_body = http_event.parsed_body;
   const workspaceId = parsed_body.team_id;
-  const user = parsed_body.event.user;
+  const userId = parsed_body.event.user;
   const response_url = parsed_body.response_url;
   const channelId = parsed_body.event.channel;
   
@@ -17,7 +17,7 @@
   //check if not a bot
   if (!parsed_body.event.bot_id && !http_event.headers['X-Slack-Retry-Num'])  {
     let body_text = parsed_body.event.text;
-    let lex_result = api.run("this.post_text", {slackText : body_text, userId : user});
+    let lex_result = api.run("this.post_text", {slackText : body_text, userId : userId});
         
     if (lex_result[0].dialogState != "ReadyForFulfillment") {
     	let lex_slack = lex_result[0].message;
