@@ -36,7 +36,9 @@
       	
         let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong});
       
-      	console.log(google_place_results);
+      	console.log(Object.keys(google_place_results).length);
+      	console.log();
+      
       
       	if (google_place_results[0]) {
           let google_message = "I have a suggestion... \n" + google_place_results[0]["name"] + " \n" + "https://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
