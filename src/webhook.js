@@ -40,7 +40,7 @@
       
       	console.log(google_place_results);
       
-      	let google_message = google_place_results[0]["name"] + " " + google_place_results[0]["vicinity"];
+      	let google_message = google_place_results[0]["name"] + " " + google_place_results[0]["vicinity"] + "/nhttps://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
       	let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});
     }
   } 
