@@ -40,12 +40,12 @@
       	console.log();
       
       
-      	if (Object.keys(google_place_results.length) {
+      	if (Object.keys(google_place_results.length)) {
           let google_message = "I have a suggestion... \n";
           Object.keys(google_place_results.forEach(function (item) {
             google_message += google_place_results[item]["name"] + " \n" + "https://www.google.com/maps/place/?q=place_id:" + google_place_results[item]["place_id"];
           	let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});                                            
-          });      
+          }));      
         } else {
           let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
         }
