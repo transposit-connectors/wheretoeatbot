@@ -40,9 +40,12 @@
       	console.log();
       
       
-      	if (google_place_results[0]) {
-          let google_message = "I have a suggestion... \n" + google_place_results[0]["name"] + " \n" + "https://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
-          let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});          
+      	if (Object.keys(google_place_results.length) {
+          let google_message = "I have a suggestion... \n";
+          Object.keys(google_place_results).forEach (function (item){
+            google_message += google_place_results[0]["name"] + " \n" + "https://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
+          	let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});                                            
+          });      
         } else {
           let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
         }
