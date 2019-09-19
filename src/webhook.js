@@ -37,7 +37,7 @@
         let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong});
             
       	if (Object.keys(google_place_results.length)) {
-          let google_message = "I have a suggestion... \n";
+          let google_message = "I have some suggestions... \n";
           Object.keys(google_place_results.forEach(function (item) {
             console.log(google_place_results);
             // returns correct results
