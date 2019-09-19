@@ -18,7 +18,7 @@
   if (!parsed_body.event.bot_id && !http_event.headers['X-Slack-Retry-Num'])  {
     let body_text = parsed_body.event.text;
     console.log(userId);
-    let lex_result = api.run("this.post_text", {slackText : body_text, userId : userId});
+    let lex_result = api.run("this.post_text", {slackText : body_text, userId : parsed_body.event.user});
         
     if (lex_result[0].dialogState != "ReadyForFulfillment") {
     	let lex_slack = lex_result[0].message;
