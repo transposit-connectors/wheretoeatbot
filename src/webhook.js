@@ -28,9 +28,7 @@
       	let userAddress = lex_result[0]["slots"]["Location"];
       	// avg walk speed is 1.4 m/s, so max time in min * 1.4 * 60 to get maxDistance in meters
       	let maxDistance = lex_result[0]["slots"]["Distance"] * 1.4 * 60;
-      
-    	let slack_recommendations = api.run("this.post_chat_message", {text : "I have some suggestions...", channelId : channelId});
-      	
+            	
       	let google_geocode_results = api.run("this.geocode", {address : userAddress});      
       	let latLong = [google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"], 
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
@@ -41,7 +39,7 @@
       	console.log(google_place_results);
       
       	if (google_place_results[0]) {
-          let google_message = google_place_results[0]["name"] + " " + google_place_results[0]["vicinity"] + " /nhttps://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
+          let google_message = "I have some suggestions... \n" + google_place_results[0]["name"] + " " + google_place_results[0]["vicinity"] + " /nhttps://www.google.com/maps/place/?q=place_id:" + google_place_results[0]["place_id"];
           let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});          
         } else {
           let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
