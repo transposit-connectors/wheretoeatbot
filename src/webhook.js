@@ -17,7 +17,6 @@
   //check if not a bot
   if (!parsed_body.event.bot_id && !http_event.headers['X-Slack-Retry-Num'])  {
     let body_text = parsed_body.event.text;
-    console.log(userId);
     let lex_result = api.run("this.post_text", {slackText : body_text, userId : user});
         
     if (lex_result[0].dialogState != "ReadyForFulfillment") {
