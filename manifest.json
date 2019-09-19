@@ -52,7 +52,7 @@
         "id": "post_chat_message",
         "tql": {
           "parameters": [{
-            "name": "lexResponse",
+            "name": "text",
             "type": "STRING"
           }, {
             "name": "channelId",
