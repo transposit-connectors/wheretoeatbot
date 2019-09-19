@@ -38,6 +38,8 @@
       	
         let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong});
       
+      	console.log(google_place_results);
+      
       	let google_message = google_place_results[0]["name"] + " " + google_place_results[0]["vicinity"];
       	let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});
     }
