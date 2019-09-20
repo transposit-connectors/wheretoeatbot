@@ -58,7 +58,7 @@
           Object.keys(google_place_results).forEach(function (item) {
     		console.log(google_place_results[item]["name"]);
     		google_message += google_place_results[item]["name"] + " ";
-		})};
+		  });
         }
     }
   } 
