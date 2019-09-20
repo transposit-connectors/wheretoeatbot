@@ -40,6 +40,7 @@
 		if (Object.keys(google_place_results.length)) {
           let google_message = "I have some suggestions... \n";
           Object.keys(google_place_results).forEach(function (item) {
+            console.log(item);
             while (item < 3) {
               console.log(google_place_results[item]["name"]);
               google_message += google_place_results[item]["name"] + " \n" + 
