@@ -36,33 +36,17 @@
       	
         let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong});
             
-      	// initial code
-      	if (Object.keys(google_place_results.length)) {
-      	let google_message = "I have some suggestions... \n";
-      	Object.keys(google_place_results.forEach(function (item) {
-      		console.log(google_place_results);
-      		// returns correct results
-      		console.log(google_place_results[item]);
-      		// returns "null"
-      		google_message += google_place_results[item]["name"] + " \n" + "https://www.google.com/maps/place/?q=place_id:" + google_place_results[item]["place_id"];
-      	}); 
-      	let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});                                            
-      	} else {
-      	let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
-      	}
-      
-      	//rewrite
-		  // if (Object.keys(google_place_results.length)) {
-		  // let google_message = "I have some suggestions... \n";
-		  // Object.keys(google_place_results).forEach(function (item) {
-		  // console.log(google_place_results[item]["name"]);
-		  // google_message += google_place_results[item]["name"] + " \n" + 
-		  // "https://www.google.com/maps/place/?q=place_id:" + google_place_results[item]["place_id"] + "\n";
-		  // });
-		  // let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});                                            
-		  // } else {
-		  // let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
-		  // }
+		if (Object.keys(google_place_results.length)) {
+          let google_message = "I have some suggestions... \n";
+          Object.keys(google_place_results).forEach(function (item) {
+            console.log(google_place_results[item]["name"]);
+            google_message += google_place_results[item]["name"] + " \n" + 
+                "https://www.google.com/maps/place/?q=place_id:" + google_place_results[item]["place_id"] + "\n";
+		  });
+		  let google_slack = api.run("this.post_chat_message", {text : google_message, channelId : channelId});                                            
+		} else {
+          let google_slack = api.run("this.post_chat_message", {text : "I'm sorry I don't have any suggestions within that distance", channelId : channelId});
+		}
     }
   } 
   return { status_code: 200 };
