@@ -70,7 +70,7 @@
             "name": "radius",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM google_maps.search_nearby\n  WHERE type='restaurant'\n  AND rankby='prominence'\n  AND maxprice=2\n  AND opennow=true\n  AND location=@location\n  AND radius=@radius\n  -- The following parameters have been populated with suggested values\n  AND outputFormat='json'\n  LIMIT 3\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM google_maps.search_nearby\n  WHERE type='restaurant'\n  AND rankby='prominence'\n  AND maxprice=@maxprice\n  AND opennow=true\n  AND location=@location\n  AND radius=@radius\n  -- The following parameters have been populated with suggested values\n  AND outputFormat='json'\n  LIMIT 3\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }, {
         "id": "geocode",
