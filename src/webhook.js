@@ -34,7 +34,7 @@
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
       	latLong = latLong.join();
       	
-        let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong, maxprice: 1});
+        let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong, maxprice: maxPrice});
             
 		if (Object.keys(google_place_results.length)) {
           let google_message = "I have some suggestions... \n";
