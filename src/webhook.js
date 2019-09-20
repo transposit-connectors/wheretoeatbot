@@ -24,6 +24,7 @@
     	let lex_slack_response = api.run("this.post_chat_message", {text : lex_slack, channelId : channelId});      
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
+      	console.log(lex_result[0]);
       	let maxPrice = lex_result[0]["slots"]["Price"];
       	let userAddress = lex_result[0]["slots"]["Location"];
       	// avg walk speed is 1.4 m/s, so max time in min * 1.4 * 60 to get maxDistance in meters
@@ -33,7 +34,7 @@
       	let latLong = [google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"], 
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
       	latLong = latLong.join();
-      	console.log(maxPrice);
+
       	let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong, maxprice : 1});
             
 		if (Object.keys(google_place_results.length)) {
