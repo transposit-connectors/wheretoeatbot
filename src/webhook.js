@@ -25,7 +25,7 @@
     }
     else if (lex_result[0].dialogState === "ReadyForFulfillment"){
       	console.log(lex_result[0]);
-      	let maxPrice = lex_result[0]["slots"]["Price"];
+      	let maxPrice = parseInt(lex_result[0]["slots"]["Price"]);
       	let userAddress = lex_result[0]["slots"]["Location"];
       	// avg walk speed is 1.4 m/s, so max time in min * 1.4 * 60 to get maxDistance in meters
       	let maxDistance = lex_result[0]["slots"]["Distance"] * 1.4 * 60;
@@ -34,8 +34,8 @@
       	let latLong = [google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"], 
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
       	latLong = latLong.join();
-		console.log(parseInt(maxPrice));
-      	let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong, maxprice : parseInt(maxPrice) });
+		console.log(typeOf maxPrice);
+      	let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong, maxprice : maxPrice });
             
 		if (Object.keys(google_place_results.length)) {
           let google_message = "I have some suggestions... \n";
