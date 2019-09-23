@@ -136,6 +136,14 @@
             }
           }
         }
+      }, {
+        "ref": "slack_webhook.raw_slack_response_url",
+        "overrides": {
+          "swagger": {
+            "executionLimits": {
+            }
+          }
+        }
       }],
       "javascriptAPIVersion": "3",
       "source": "src",
