@@ -34,12 +34,11 @@
       	let latLong = [google_geocode_results[0]["results"][0]["geometry"]["location"]["lat"], 
                        google_geocode_results[0]["results"][0]["geometry"]["location"]["lng"]];
       	latLong = latLong.join();
-		console.log(typeof maxPrice);
+
       	let google_place_results = api.run("this.search_nearby", {radius : maxDistance, location : latLong, maxprice : maxPrice });
             
 		if (Object.keys(google_place_results.length)) {
           let google_message = "I have some suggestions... \n";
-          console.log(google_place_results);
           Object.keys(google_place_results).forEach(function (item) {
             console.log(google_place_results[item]["name"]);
             google_message += google_place_results[item]["name"] + " \n" + 
