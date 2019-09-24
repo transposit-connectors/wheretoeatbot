@@ -148,6 +148,8 @@
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
-    }
+    },
+    "description": "A bot that helps you find highly rated food recommendations nearby, using AWS Lex and the Google Maps Places API",
+    "displayName": "WhereToEatBot"
   }
 }
