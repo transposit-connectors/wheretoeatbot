@@ -5,11 +5,11 @@ A bot that helps you find highly rated food recommendations nearby, using AWS Le
 Time estimate: 30 minutes (20 minutes if you are familiar with AWS Console or creating Slack apps)
 
 Before you begin, you need: 
-A Transposit account with a forked version of [this app](https://console.transposit.com/t/taylor/wheretoeatbot?fork=true)
-A Slack workspace where you can create and install apps 
-A hunger for good food nearby
+- A Transposit account with a forked version of [this app](https://console.transposit.com/t/taylor/wheretoeatbot?fork=true)
+- A Slack workspace where you can create and install apps 
+- A hunger for good food nearby
 
-[TODO: Picture in action, waiting until have icon]
+TODO: Picture in action, waiting until have icon
 
 ## Setup AWS
 
@@ -19,10 +19,10 @@ A hunger for good food nearby
 2. Once you are signed into AWS, navigate to the Amazon Lex console at https://console.aws.amazon.com/lex/.
 3. If this is your first Lex bot, choose the "Get Started" button; otherwise, on the Bots page, choose the "Create" button.
 4. On the Create your bot page, set the following: 
- - Bot name: WhereToEat
- - Output voice: None
- - Session timeout: 10 min
- - COPPA: No
+    - Bot name: WhereToEat
+    - Output voice: None
+    - Session timeout: 10 min
+    - COPPA: No
 5. Click the "Create Intent" button, choose "Create intent," and give it the name "FindRestaurant"
 6. Under Sample utterances, Copy and paste the following phrases, you can add others, but these are good to start with:
     - food nearby
