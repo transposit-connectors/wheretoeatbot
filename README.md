@@ -150,7 +150,7 @@ Here we are creating a user. Following the principle of least privilege, we’re
               "route"
             ]
           },
-          …
+    ...
   }
 ]
 ```
@@ -165,3 +165,9 @@ Here we are creating a user. Following the principle of least privilege, we’re
 6. Follow the instructions [here](https://www.transposit.com/docs/guides/slack/chatbots/#acting-as-your-bot-user) to get OAuth setup and under Scopes in Slack, make sure to set the chat:write:bot and bot scopes
 7. If you have not installed or reinstalled the app, in the Slack app configure page, go to Install App and install it into your workspace
 8. Now you can DM your bot telling it, you want a place to eat and follow its prompts! 
+
+> Note: Right now, you will need to message the bot something similar to the sample utterances for the bot to understand your prompt. 
+
+## Go further:
+- Add another criteria (type of restaurant, minimum rating, etc) using slot values with AWS Lex
+- Include validation for responses or more sample utterances in AWS Lex to make the bot “smarter” 
