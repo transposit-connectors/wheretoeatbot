@@ -1,4 +1,4 @@
-# WhereToEat Bot
+# WhereToEatBot
 
 A bot that helps you find highly rated food recommendations nearby, using AWS Lex and the Google Maps Places API. 
 
