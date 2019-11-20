@@ -5,11 +5,9 @@ A bot that helps you find highly rated food recommendations nearby, using AWS Le
 Time estimate: 30 minutes (20 minutes if you are familiar with AWS Console or creating Slack apps)
 
 Before you begin, you need: 
-- A Transposit account with a forked version of [this app](https://console.transposit.com/t/taylor/wheretoeatbot?fork=true)
+- A Transposit account with a forked version of [this app](https://console.transposit.com/t/transposit-sample/wheretoeatbot?fork=true)
 - A Slack workspace where you can create and install apps 
 - A hunger for good food nearby
-
-TODO: Picture in action, waiting until have icon
 
 ## Setup AWS
 
@@ -92,7 +90,7 @@ Here we are creating a user. Following the principle of least privilege, we’re
 
 1. Go to https://cloud.google.com/maps-platform/#get-started to get an API key for the Google Maps Places API
 2. You will be prompted to login to the Google account you want to associate the key with
-3. Select Places checkbox in the pop up (TODO: Add picture just in case UI is different)
+3. Select Places checkbox in the pop up
 4. Enter new project name (e.g. WhereToEat)
 5. You may need to set up billing, Google Cloud Platform will likely give you a year long free trial at this time if you have haven't set this up before
 6. You will see a pop up with your API key, copy this key
